@@ -1,0 +1,28 @@
+﻿@model Produit
+<h2>Nouveau produit</h2>
+
+<form action="~/Epicerie/Ajouter" method="get">
+
+	<div class="mb-3">
+		@Html.LabelFor(Model => Model.CodeBarre, htmlAttributes: new { @class = "form-label" })
+		@Html.EditorFor(Model => Model.CodeBarre, new { htmlAttributes = new { @class = "form-control" }})
+		@Html.ValidationMessageFor(Model => Model.CodeBarre, "", new { @class = "text-danger" })
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Nom" class="form-label"></label>
+		<input asp-for="Nom" class="form-control" />
+		<span asp-validation-for="Nom" class="text-danger"></span>
+	</div>
+
+	<div class="mb-3">
+		@Html.LabelFor(Model => Model.Prix) <br />
+		@Html.EditorFor(Model => Model.Prix) <br />
+		<span class="text-danger">
+			@Html.ValidationMessageFor(Model => Model.Prix)
+		</span> <br />
+	</div>
+
+	<input type="submit" value="Ajouter" class="btn btn-primary"/>
+
+</form>

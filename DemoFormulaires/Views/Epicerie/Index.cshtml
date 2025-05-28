@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Produit>
+
+<h2>Magasin</h2>
+@Html.ActionLink("Nouveau", "Nouveau", "", htmlAttributes: new { @class = "btn btn-primary" })
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.CodeBarre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Nom)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Prix)
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(Produit produit in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => produit.CodeBarre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => produit.Nom)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => produit.Prix)
+				</td>
+				<td>
+					@Html.ActionLink("Ouvrir", "Produit", 
+					new { id = produit.CodeBarre }, 
+					htmlAttributes: new { @class = "btn btn-primary" })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

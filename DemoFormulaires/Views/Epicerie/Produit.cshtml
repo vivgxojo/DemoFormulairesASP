@@ -1,0 +1,18 @@
+﻿@model Produit
+
+<h2>@Model.Nom</h2>
+<dl>
+	<dt>
+		@Html.DisplayNameFor(model => model.CodeBarre)
+	</dt>
+	<dd>
+		@Html.DisplayFor(Model => Model.CodeBarre)
+	</dd>
+	<dt>
+		@Html.DisplayNameFor(model => model.Prix)
+	</dt>
+	<dd>
+		@Html.DisplayFor(Model => Model.Prix) | @Model.Prix 
+	</dd>
+</dl>
+@Html.ActionLink("Retour", "Index", "", htmlAttributes: new { @class = "btn btn-primary" })
