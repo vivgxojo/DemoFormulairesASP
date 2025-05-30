@@ -11,18 +11,22 @@
 
 	<div class="mb-3">
 		<label asp-for="Nom" class="form-label"></label>
-		<input asp-for="Nom" class="form-control" />
+		<input asp-for="Nom" class="form-control" maxlength="8"/>
 		<span asp-validation-for="Nom" class="text-danger"></span>
 	</div>
 
 	<div class="mb-3">
 		@Html.LabelFor(Model => Model.Prix) <br />
-		@Html.EditorFor(Model => Model.Prix) <br />
+		<input asp-for="Prix" class="form-control" min="0.01"/><br />
 		<span class="text-danger">
 			@Html.ValidationMessageFor(Model => Model.Prix)
 		</span> <br />
 	</div>
 
 	<input type="submit" value="Ajouter" class="btn btn-primary"/>
-
+	
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
