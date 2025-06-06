@@ -2,10 +2,13 @@
 <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 
 <script>
+
     // Déclaration d'une méthode de validation personnalisée
     $.validator.addMethod("codebarrevalide", function (value, element) {
-        return /^100\d{5}$/.test(value);
-    }, "Le code-barres doit commencer par 100 et contenir 8 chiffres.");
+        
+        alert("Hello");
+        return /^1000\d{4}$/.test(value);
+    }, "Le code-barres doit commencer par 1000 et contenir 8 chiffres.");
 
     // Attachement de cette règle à un champ via un attribut data
     $.validator.unobtrusive.adapters.addBool("codebarrevalide");

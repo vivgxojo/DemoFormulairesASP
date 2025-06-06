@@ -10,7 +10,7 @@ namespace DemoFormulaires.Models
         [Display(Name = "Code barre")]
         [Range(10000000, long.MaxValue, ErrorMessage = "Le code barre doit avoir au moins 8 chiffres")]
         [CodeBarreValide(ErrorMessage = "Le code-barres doit commencer par 100 et contenir 8 chiffres.")]
-        public long CodeBarre { get; set; }
+        public string CodeBarre { get; set; }
 
         [Required(ErrorMessage = "Ce champ est obligatoire.")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$", ErrorMessage =
@@ -52,7 +52,7 @@ namespace DemoFormulaires.Models
         public Produit() { }
         public Produit(long codeBarre, string nom, decimal prix)
         {
-            CodeBarre = codeBarre;
+            CodeBarre = codeBarre.ToString();
             Nom = nom;
             Prix = prix.ToString();
         }

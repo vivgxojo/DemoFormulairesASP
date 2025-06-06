@@ -11,7 +11,7 @@ namespace DemoFormulaires.Controllers
             return View(produits);
         }
 
-        public IActionResult Produit(long id)
+        public IActionResult Produit(string id)
         {
             Produit produit = produits.FirstOrDefault(p => p.CodeBarre == id);
             return View(produit);
