@@ -19,6 +19,13 @@ namespace DemoFormulaires.Models
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+
+            yield return new ModelClientValidationRule
+            {
+                ValidationType = "codebarrevalide", 
+                ErrorMessage = FormatErrorMessage(metadata.DisplayName)
+            };
+            /*
             List<ModelClientValidationRule> liste = new List<ModelClientValidationRule>();
             liste.Add(new ModelClientValidationRule()
             {
@@ -26,6 +33,7 @@ namespace DemoFormulaires.Models
                 ErrorMessage = FormatErrorMessage(metadata.DisplayName)
             });
             return liste;
+            */
         }
 
     }

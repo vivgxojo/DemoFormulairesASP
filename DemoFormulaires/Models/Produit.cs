@@ -8,8 +8,8 @@ namespace DemoFormulaires.Models
 
         [Required(ErrorMessage ="Ce champ est obligatoire.")]
         [Display(Name = "Code barre")]
-        [Range(10000000, long.MaxValue, ErrorMessage = "Le code barre doit avoir au moins 8 chiffres")]
-        [CodeBarreValide(ErrorMessage = "Le code-barres doit commencer par 100 et contenir 8 chiffres.")]
+        //[Range(10000000, long.MaxValue, ErrorMessage = "Le code barre doit avoir au moins 8 chiffres")]
+        [CodeBarreValide(ErrorMessage = "M: Le code-barres doit commencer par 100 et contenir 8 chiffres.")]
         public string CodeBarre { get; set; }
 
         [Required(ErrorMessage = "Ce champ est obligatoire.")]
