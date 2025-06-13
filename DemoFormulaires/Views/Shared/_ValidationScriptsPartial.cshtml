@@ -5,8 +5,6 @@
 
     // Déclaration d'une méthode de validation personnalisée
     $.validator.addMethod("codebarrevalide", function (value, element) {
-        
-        alert("Hello");
         return /^1000\d{4}$/.test(value);
     }, "JQ: Le code-barres doit commencer par 1000 et contenir 8 chiffres.");
 

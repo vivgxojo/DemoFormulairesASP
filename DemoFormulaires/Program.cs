@@ -18,12 +18,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapStaticAssets();
+app.UseStaticFiles();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Epicerie}/{action=Index}/{id?}")
-    .WithStaticAssets();
+    pattern: "{controller=Epicerie}/{action=Index}/{id?}");
 
 
 app.Run();
